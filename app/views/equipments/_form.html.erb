@@ -1,0 +1,15 @@
+<%= form_for @equipment do |equipment| %>
+  <p>
+    <%= equipment.label :'Equipment Code' %><br />
+    <%= equipment.text_field :code %>
+  </p>
+  <p>
+    <%= equipment.label :'Equipment Name' %><br />
+    <%= equipment.text_field :name %>
+  </p>
+  <p>
+    <%= equipment.label :'Equipment Quantity' %><br />
+    <%= equipment.text_field :quantity %>
+  </p>
+    <%= equipment.submit %>
+<% end %>

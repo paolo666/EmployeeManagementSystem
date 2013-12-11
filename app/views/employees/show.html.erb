@@ -1,0 +1,40 @@
+<p>
+  <strong>Employee Id: </strong>
+  <%= @emp.code %>
+</p>
+<p>
+  <strong>First Name: </strong>
+  <%= @emp.firstName %>
+</p>
+<p>
+  <strong>Middle Name: </strong>
+  <%= @emp.middleName %>
+</p>
+<p>
+  <strong>Last Name: </strong>
+  <%= @emp.lastName %>
+</p>
+<p>
+  <strong>Birthday: </strong>
+  <%= @emp.birthday %>
+</p>
+<p>
+  <strong>Gender: </strong>
+  <%= @emp.gender %>
+</p>
+
+<h2>Add equipment:</h2>
+<%= form_for([@emp, @emp.borrowed_equipments.build]) do |borrowed_eq| %>
+<%= borrowed_eq.label :"Select Equipment:" %><br />
+
+  <p>
+    <%= borrowed_eq.label :"Date Borrowed:" %><br />
+    <%= borrowed_eq.date_select(:dateBorrowed) %>
+  </p>
+  <p>
+    <%= borrowed_eq.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', employees_path %>
+| <%= link_to 'Edit', edit_employee_path(@emp) %>

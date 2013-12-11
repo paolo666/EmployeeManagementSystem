@@ -1,0 +1,23 @@
+<h1>Listing Employees</h1>
+<%= link_to 'Create New Employee', new_employee_path %>
+<table>
+  <tr>
+    <th>Employee Code</th>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Middle Name</th>
+  </tr>
+
+  <% @emp.each do |emp| %>
+    <tr>
+      <td><%= emp.code %></td>
+      <td><%= emp.lastName %></td>
+      <td><%= emp.firstName %></td>
+      <td><%= emp.middleName %></td>
+      <td><%= link_to 'Show', emp %></td>
+      <td><%= link_to 'Edit', edit_employee_path(emp) %></td>
+      <td><%= link_to 'Delete', employee_path(emp),
+                    method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

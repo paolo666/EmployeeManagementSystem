@@ -1,0 +1,44 @@
+<%= form_for @emp do |emp| %>
+  <% if @emp.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@emp.errors.count, "error") %> prohibited
+      this emp from being saved:</h2>
+    <ul>
+    <% @emp.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
+    <%= emp.label :'Employee Code' %><br>
+    <%= emp.text_field :code %>
+  </p>
+
+  <p>
+    <%= emp.label :'First Name' %><br>
+    <%= emp.text_field :firstName %>
+  </p>
+
+  <p>
+    <%= emp.label :'Last Name' %><br>
+    <%= emp.text_field :lastName %>
+  </p>
+
+  <p>
+    <%= emp.label :'Middle Name' %><br>
+    <%= emp.text_field :middleName %>
+  </p>
+
+  <p>
+    <%= emp.label :'Birthday' %><br>
+    <%= emp.date_select(:birthday, :start_year => 1940) %>
+  </p>
+
+  <p>
+    <%= emp.label :'Gender' %><br>
+    <%= emp.select :gender, ['Male', 'Female'] %>
+  </p>
+ 
+    <%= emp.submit %>
+<% end %>

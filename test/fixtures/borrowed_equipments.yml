@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateBorrowed: 2013-12-08
+  dateReturned: 2013-12-08
+  employee_id: 
+  equipment_id: 
+
+two:
+  dateBorrowed: 2013-12-08
+  dateReturned: 2013-12-08
+  employee_id: 
+  equipment_id: 
